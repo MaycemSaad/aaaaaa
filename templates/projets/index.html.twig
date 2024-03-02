@@ -7,13 +7,11 @@
 <div class="rn-collection-area rn-section-gapTop">
     <div class="container">
         <div class="row g-5">
-                            
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <a href="{{ path('app_projets_new', {'id': app.request.attributes.get('id')}) }}" class="btn btn-primary">Create New projet</a>
-                                </div>
-                            </div>
-                           
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="{{ path('app_projets_new', {'categoryId': categoryId}) }}">Create new project</a>
+                </div>
+            </div>
             <!-- start single collention -->
             {% for projet in projets %}
 

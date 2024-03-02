@@ -1,4 +1,5 @@
-{{ form_start(form, {'attr': {'novalidate': 'novalidate'}})}}
+{{ form_start(form, {'attr': {'novalidate': 'novalidate', 'enctype': 'multipart/form-data'}}) }}
+
 
 <div class="creat-collection-area pt--80">
     <div class="container">
@@ -26,6 +27,8 @@
                     
                 </div>
             </div>
+                {{ form_widget(form.category, {'attr': {'class': 'd-none'}}) }}
+
 
             <div class="col-lg-7">
                 <div class="create-collection-form-wrapper">
@@ -83,15 +86,6 @@
                                 <!-- <a href="#" class="btn btn-primary btn-large mr30" data-bs-toggle="modal" data-bs-target="#collectionModal">Preview</a> -->
                                 <button class="btn btn-primary-alta btn-large">{{ button_label|default('Create') }}</button>
 
-                            </div>
-                        </div>
-                        <div style="visibility: hidden;" class="col-lg-12">
-                            <div class="collection-single-wized">
-                                <label class="title">Category</label>
-                                <div class="create-collection-input">
-                                        {{ form_widget(form.category) }}
-                                        {{ form_errors(form.category) }}
-                                </div>
                             </div>
                         </div>
                     </div>

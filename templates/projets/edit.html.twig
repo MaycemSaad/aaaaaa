@@ -5,7 +5,7 @@
 
 {% block content%}
 
-    <a href="{{ path('app_projets_index') }}">back to list</a>
+    <a href="{{ path('app_projets_index', {'id': projet.id}) }}">back to list</a>
     
 
     {{include('projets/form.html.twig', {'button_label': 'update'})}}
