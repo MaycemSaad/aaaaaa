@@ -117,11 +117,10 @@ public function new(Request $request, EntityManagerInterface $entityManager, Cat
     #[Route('/{id}', name: 'app_projets_delete', methods: ['POST'])]
     public function delete(Request $request, Projets $projet, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$projet->getId(), $request->request->get('_token'))) {
             $entityManager->remove($projet);
             $entityManager->flush();
-        }
+        $categoryId = $projet->getCategory()->getId(); 
 
-        return $this->redirectToRoute('app_projets_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_projets_index', ['id' => $categoryId], Response::HTTP_SEE_OTHER);
     }
 }
