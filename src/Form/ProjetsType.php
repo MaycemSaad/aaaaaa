@@ -36,7 +36,7 @@ class ProjetsType extends AbstractType
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-'choice_label' => 'nom',
+        'choice_label' => 'nom',
             ])
         ;
     }
